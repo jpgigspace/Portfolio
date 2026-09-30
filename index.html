@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JP.GIGSPACE | Operations & Systems Implementation Specialist</title>
     <style>
-        /* Modern Reset & Tech Light Palette from Graphic */
+        /* Extracted Palette from Banner Graphic */
         :root {
-            --bg-page: #F0F5FA;
+            --bg-body: #F0F5FA;
             --bg-card: #FFFFFF;
-            --bg-accent-light: #E0EBF5;
-            --text-main: #0E1726;
-            --text-muted: #475569;
+            --bg-accent: #E0EBF5;
+            --text-primary: #0E1726;
+            --text-secondary: #475569;
             --brand-blue: #2563EB;
             --brand-blue-hover: #1D4ED8;
-            --tech-glow: #3B82F6;
-            --border-color: #CBD5E1;
+            --brand-cyan: #3B82F6;
+            --border-light: #CBD5E1;
             --border-glow: #93C5FD;
-            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         * {
@@ -27,263 +27,250 @@
         }
 
         body {
-            background-color: var(--bg-page);
-            color: var(--text-main);
-            font-family: var(--font-family);
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            font-family: var(--font-main);
             line-height: 1.6;
-            padding: 20px;
+            padding: 20px 10px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
         }
 
-        /* Header / Brand Banner Styling */
+        /* Header / Navigation Bar */
         header {
             background-color: var(--bg-card);
-            border: 2px solid var(--border-glow);
+            border: 1px solid var(--border-glow);
             border-radius: 12px;
-            padding: 30px 20px;
-            text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
         }
 
         .logo {
-            font-size: 2.2rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            letter-spacing: 2px;
-            color: var(--text-main);
-            margin-bottom: 5px;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+            text-decoration: none;
         }
 
         .logo span {
             color: var(--brand-blue);
         }
 
-        .tagline {
-            font-size: 1.1rem;
-            color: var(--brand-blue);
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .email-badge {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 6px 16px;
-            background-color: var(--bg-accent-light);
-            color: var(--text-main);
-            border-radius: 20px;
+        .header-contact {
             font-size: 0.9rem;
             font-weight: 600;
+            color: var(--brand-blue);
+            background-color: var(--bg-accent);
+            padding: 6px 14px;
+            border-radius: 20px;
             border: 1px solid var(--border-glow);
         }
 
-        /* Hero / Jamie Brindle Value Hook */
-        .hero {
+        /* Hero Section */
+        .hero-section {
             background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 40px;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 40px 30px;
             margin-bottom: 30px;
         }
 
-        .hero h1 {
-            font-size: 2rem;
-            color: var(--text-main);
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .hero h1 span {
+        .availability-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #EFF6FF;
             color: var(--brand-blue);
-            background: linear-gradient(120deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0) 100%);
-            padding: 0 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-glow);
         }
 
-        .hero p {
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--brand-blue);
+            border-radius: 50%;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            line-height: 1.25;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero-title span {
+            color: var(--brand-blue);
+        }
+
+        .hero-description {
             font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 25px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            max-width: 780px;
         }
 
         .hero-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 20px;
         }
 
-        .highlight-item {
-            background-color: var(--bg-page);
-            padding: 15px;
-            border-left: 4px solid var(--brand-blue);
-            border-radius: 0 8px 8px 0;
+        .highlight-tag {
+            background-color: var(--bg-body);
+            border-left: 3px solid var(--brand-blue);
+            padding: 8px 14px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.95rem;
             font-weight: 600;
-            color: var(--text-main);
+            color: var(--text-primary);
         }
 
-        /* 3-Step Async Process */
-        .process-section {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 35px;
-            margin-bottom: 30px;
+        /* Main Section Headers */
+        .section-header {
+            margin-bottom: 24px;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--brand-blue);
+            font-weight: 700;
+            margin-bottom: 4px;
         }
 
         .section-title {
-            font-size: 1.5rem;
-            color: var(--text-main);
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--bg-page);
-            padding-bottom: 10px;
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            font-weight: 800;
         }
 
-        .steps-grid {
+        /* Core Services Grid (Top 3) */
+        .services-grid-top {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
+            margin-bottom: 30px;
         }
 
-        .step-card {
-            background-color: var(--bg-page);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+        .service-card-top {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card-top h3 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .service-card-top p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .service-card-top .price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--brand-blue);
+        }
+
+        .service-card-top .price span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        /* Funnel Implementation Packages */
+        .funnel-container {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .funnel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .funnel-card {
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
             padding: 20px;
             position: relative;
         }
 
-        .step-number {
-            font-size: 1.8rem;
+        .funnel-card.popular {
+            border: 2px solid var(--brand-blue);
+            background-color: #FFFFFF;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 16px;
+            background-color: var(--brand-blue);
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 2px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+
+        .funnel-card h4 {
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .funnel-price {
+            font-size: 1.15rem;
             font-weight: 800;
             color: var(--brand-blue);
-            margin-bottom: 10px;
-        }
-
-        .step-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: var(--text-main);
-        }
-
-        .step-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        /* Services Grid */
-        .services-section {
-            margin-bottom: 30px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 20px;
-        }
-
-        .service-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 25px;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .service-card:hover {
-            border-color: var(--brand-blue);
-            transform: translateY(-2px);
-        }
-
-        .service-badge {
-            display: inline-block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: var(--brand-blue);
-            background-color: var(--bg-accent-light);
-            padding: 4px 10px;
-            border-radius: 4px;
             margin-bottom: 12px;
         }
 
-        .service-card h3 {
-            font-size: 1.2rem;
-            color: var(--text-main);
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-        }
-
-        .service-price {
-            font-weight: 700;
-            color: var(--text-main);
-            font-size: 1rem;
-        }
-
-        /* Boundaries & Scope Grid */
-        .scope-section {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 35px;
-            margin-bottom: 30px;
-        }
-
-        .scope-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .scope-box {
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .scope-box.in-scope {
-            background-color: #EFF6FF;
-            border: 1px solid var(--border-glow);
-        }
-
-        .scope-box.out-scope {
-            background-color: #F8FAFC;
-            border: 1px solid var(--border-color);
-        }
-
-        .scope-box h4 {
-            margin-bottom: 12px;
-            font-size: 1.05rem;
-        }
-
-        .scope-box.in-scope h4 {
-            color: var(--brand-blue);
-        }
-
-        .scope-box.out-scope h4 {
-            color: var(--text-muted);
-        }
-
-        .scope-box ul {
+        .funnel-card ul {
             list-style: none;
         }
 
-        .scope-box ul li {
-            font-size: 0.9rem;
-            color: var(--text-main);
-            margin-bottom: 8px;
+        .funnel-card ul li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            padding-left: 14px;
             position: relative;
-            padding-left: 20px;
         }
 
-        .scope-box.in-scope ul li::before {
+        .funnel-card ul li::before {
             content: "✓";
             position: absolute;
             left: 0;
@@ -291,54 +278,149 @@
             font-weight: bold;
         }
 
-        .scope-box.out-scope ul li::before {
+        /* Additional Support Grid */
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .additional-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .additional-card h4 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .additional-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .additional-price {
+            font-weight: 700;
+            color: var(--brand-blue);
+            font-size: 0.95rem;
+        }
+
+        /* Website Revamp / Migration Row */
+        .projects-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .project-card .price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--brand-blue);
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Scope & Boundaries Section */
+        .boundaries-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .boundaries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 16px;
+        }
+
+        .boundary-box {
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .boundary-box.in-scope {
+            background-color: #EFF6FF;
+            border: 1px solid var(--border-glow);
+        }
+
+        .boundary-box.out-scope {
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-light);
+        }
+
+        .boundary-box h4 {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        .boundary-box.in-scope h4 {
+            color: var(--brand-blue);
+        }
+
+        .boundary-box.out-scope h4 {
+            color: var(--text-secondary);
+        }
+
+        .boundary-box ul {
+            list-style: none;
+        }
+
+        .boundary-box ul li {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .boundary-box.in-scope ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--brand-blue);
+            font-weight: bold;
+        }
+
+        .boundary-box.out-scope ul li::before {
             content: "✕";
             position: absolute;
             left: 0;
             color: #94A3B8;
         }
 
-        /* Intake Form / CTA Section */
-        .intake-section {
-            background-color: var(--bg-card);
-            border: 2px solid var(--brand-blue);
-            border-radius: 12px;
-            padding: 35px;
-            text-align: center;
-        }
-
-        .intake-section h2 {
-            font-size: 1.6rem;
-            color: var(--text-main);
-            margin-bottom: 10px;
-        }
-
-        .intake-section p {
-            color: var(--text-muted);
-            margin-bottom: 25px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--brand-blue);
-            color: #FFFFFF;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: background-color 0.2s;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--brand-blue-hover);
-        }
-
+        /* Footer */
         footer {
             text-align: center;
-            margin-top: 40px;
+            padding: 20px;
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
         }
     </style>
 </head>
@@ -346,122 +428,196 @@
 
     <div class="container">
 
-        <!-- Header -->
+        <!-- Header Bar -->
         <header>
-            <div class="logo">JP.<span>GIGSPACE</span></div>
-            <div class="tagline">Operations & Systems Implementation Specialist</div>
-            <div class="email-badge">✉ ip.gigspace@gmail.com</div>
+            <a href="#" class="logo">JP.<span>GIGSPACE</span></a>
+            <div class="header-contact">✉ ip.gigspace@gmail.com</div>
         </header>
 
         <!-- Hero Section -->
-        <section class="hero">
-            <h1>You have the strategy & content.<br><span>Let's get it built and working.</span></h1>
-            <p>I take your existing copy, graphics, and workflow directions and turn them into functional web pages, structured task queues, and automated systems—100% asynchronously.</p>
-
+        <section class="hero-section">
+            <div class="availability-badge">
+                <span class="status-dot"></span> Available for Implementation & Support Projects
+            </div>
+            <h1 class="hero-title">Have the <span>plan?</span> Let's get it built.</h1>
+            <p class="hero-description">
+                You already have the offer, direction, and creative assets. What you need is someone who can take those pieces and turn them into a functional funnel, website update, email system, course platform, podcast workflow, or organized day-to-day operation.
+            </p>
             <div class="hero-highlights">
-                <div class="highlight-item">✓ Bring your finalized assets</div>
-                <div class="highlight-item">✓ Get implementation handled</div>
-                <div class="highlight-item">✓ Zero status meetings needed</div>
+                <div class="highlight-tag">✓ Bring your existing assets</div>
+                <div class="highlight-tag">✓ Get implementation handled</div>
+                <div class="highlight-tag">✓ Know what was tested</div>
             </div>
         </section>
 
-        <!-- 3-Step Async Process -->
-        <section class="process-section">
-            <h2 class="section-title">How We Work Together (Async Workflow)</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">01</div>
-                    <h3>Share Your Brief</h3>
-                    <p>Send over your Google Doc, asset folder, or Loom video walkthrough detailing your project scope and deadlines.</p>
+        <!-- Core Services Header -->
+        <div class="section-header">
+            <div class="section-subtitle">Services & Pricing</div>
+            <h2 class="section-title">You have the pieces. You need them put together.</h2>
+        </div>
+
+        <!-- Top 3 Services -->
+        <div class="services-grid-top">
+            <div class="service-card-top">
+                <div>
+                    <div class="section-subtitle">Operations</div>
+                    <h3>Project & Email Support</h3>
+                    <p>Need someone to keep moving pieces organized? Get support with project coordination, inbox work, task queue prioritization, and implementation.</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">02</div>
-                    <h3>Build & QA Test</h3>
-                    <p>I build the layout, organize task priorities, connect forms/automations, and thoroughly test functionality.</p>
+                <div class="price">$25 <span>/ hr</span></div>
+            </div>
+
+            <div class="service-card-top">
+                <div>
+                    <div class="section-subtitle">Web</div>
+                    <h3>Website Updates</h3>
+                    <p>Need a website change without handing over the whole project? Get help with page edits, content uploads, forms, links, and general page maintenance.</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">03</div>
-                    <h3>Receive Live Setup</h3>
-                    <p>You get live links, clean task queues, and tested systems handed back to you without a single status call.</p>
+                <div class="price">$25–30 <span>/ hr</span></div>
+            </div>
+
+            <div class="service-card-top">
+                <div>
+                    <div class="section-subtitle">Strategy</div>
+                    <h3>Strategy & Business Calls</h3>
+                    <p>Need a second pair of eyes before you build or launch? Use a focused session to talk through implementation, funnels, or business systems.</p>
+                </div>
+                <div class="price">$30 <span>/ hr</span></div>
+            </div>
+        </div>
+
+        <!-- Funnel Implementation Packages -->
+        <section class="funnel-container">
+            <div class="section-subtitle">Funnel Implementation</div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 4px;">Build the customer journey without handing me your ad account.</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Starting prices · Final pricing depends on scope, platform, and integrations.</p>
+
+            <div class="funnel-grid">
+                <div class="funnel-card">
+                    <h4>Lead Generation Funnel</h4>
+                    <div class="funnel-price">Starting at $299</div>
+                    <ul>
+                        <li>Landing + thank-you page</li>
+                        <li>Up to 5 nurture emails</li>
+                        <li>List/newsletter integration</li>
+                        <li>Automation & basic QA</li>
+                    </ul>
+                </div>
+
+                <div class="funnel-card popular">
+                    <span class="popular-badge">Popular</span>
+                    <h4>Sales Funnel</h4>
+                    <div class="funnel-price">Starting at $699</div>
+                    <ul>
+                        <li>Landing + sales page</li>
+                        <li>Checkout + confirmation</li>
+                        <li>Email automation & nurture</li>
+                        <li>Integrations & end-to-end QA</li>
+                    </ul>
+                </div>
+
+                <div class="funnel-card">
+                    <h4>Sales Funnel + Upsell</h4>
+                    <div class="funnel-price">Starting at $999</div>
+                    <ul>
+                        <li>Complete sales funnel</li>
+                        <li>Upsell page & flow</li>
+                        <li>Email automation & nurture</li>
+                        <li>Integrations & QA</li>
+                    </ul>
+                </div>
+
+                <div class="funnel-card">
+                    <h4>Time-Sensitive Launch</h4>
+                    <div class="funnel-price">Starting at $1,499</div>
+                    <ul>
+                        <li>Pre/launch/post setup</li>
+                        <li>Pages, checkout & confirmation</li>
+                        <li>Email implementation</li>
+                        <li>Launch coordination & QA</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section class="services-section">
-            <h2 class="section-title" style="margin-bottom: 20px;">Services & Pricing</h2>
-            <div class="services-grid">
+        <!-- Additional Support Services -->
+        <div class="section-header">
+            <div class="section-subtitle">Additional Support</div>
+            <h2 class="section-title">More ways to plug into your workflow.</h2>
+        </div>
 
-                <div class="service-card">
-                    <span class="service-badge">Operations</span>
-                    <h3>Task & Project Management</h3>
-                    <p>Organizing priority queues, managing task deadlines, standardizing SOPs, and tracking project deliverables across platforms (Notion, ClickUp, Asana).</p>
-                    <div class="service-price">$25 / hr</div>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-badge">Funnel & Web</span>
-                    <h3>Funnel & Page Assembly</h3>
-                    <p>Building landing pages, sales pages, form connections, and website layout updates using your provided copy and graphics (Kajabi, Wix, Squarespace, Leadpages).</p>
-                    <div class="service-price">Starting at $299</div>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-badge">Systems</span>
-                    <h3>Email Systems & LMS Support</h3>
-                    <p>Setting up email list automations, tag workflows, email form connections (Kit, ActiveCampaign), and updating course lesson modules in LMS platforms.</p>
-                    <div class="service-price">Starting at $20 / hr</div>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-badge">Media Support</span>
-                    <h3>Podcast Audio Editing</h3>
-                    <p>Clean conversational audio editing: background noise reduction, cuts, intro/outro assembly, leveling, and final MP3 export.</p>
-                    <div class="service-price">Starting at $75 / episode</div>
-                </div>
-
+        <div class="additional-grid">
+            <div class="additional-card">
+                <div class="section-subtitle">Learning Platforms</div>
+                <h4>LMS Administration</h4>
+                <p>Keep courses organized and updated with lesson uploads, course-page edits, learner-facing updates, and platform maintenance.</p>
+                <div class="additional-price">Starting at $20 / hr</div>
             </div>
-        </section>
+
+            <div class="additional-card">
+                <div class="section-subtitle">Podcasting</div>
+                <h4>Podcast Audio Editing</h4>
+                <p>Audio-only post-production for interview and conversational podcasts: cleanup, cuts, leveling, intro/outro assembly, and final export.</p>
+                <div class="additional-price">Starting at $75 / episode</div>
+            </div>
+
+            <div class="additional-card">
+                <div class="section-subtitle">Professional Communication</div>
+                <h4>Business English Conversation</h4>
+                <p>Practical, conversational English support for working adults wanting to communicate comfortably in workplace conversations.</p>
+                <div class="additional-price">Starting at $15 / hr</div>
+            </div>
+        </div>
+
+        <!-- Web Projects Row -->
+        <div class="projects-row">
+            <div class="project-card">
+                <div class="section-subtitle">Website Project</div>
+                <h3>Website Revamp</h3>
+                <div class="price">Starting at $1,200</div>
+                <p>For businesses refreshing or restructuring an existing site. Scope includes page restructuring, mobile optimization, forms, and QA.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="section-subtitle">Website Project</div>
+                <h3>Website Migration</h3>
+                <div class="price">Starting at $1,500</div>
+                <p>For organized platform-to-platform moves involving pages, content, forms, integrations, automations, and redirects.</p>
+            </div>
+        </div>
 
         <!-- Scope & Boundaries Grid -->
-        <section class="scope-section">
-            <h2 class="section-title">Clear Scope Boundaries</h2>
-            <div class="scope-grid">
+        <section class="boundaries-section">
+            <div class="section-subtitle">Scope Boundaries</div>
+            <h3 style="font-size: 1.3rem;">Clear boundaries keep projects moving smoothly.</h3>
 
-                <div class="scope-box in-scope">
+            <div class="boundaries-grid">
+                <div class="boundary-box in-scope">
                     <h4>What I Handle</h4>
                     <ul>
-                        <li>Platform assembly & layout setup</li>
+                        <li>Platform assembly & page layout setup</li>
                         <li>SOP library structuring</li>
-                        <li>Task queue & deadline organization</li>
+                        <li>Task queue & deadline prioritization</li>
                         <li>Email automation & form wiring</li>
                         <li>End-to-end technical QA testing</li>
                     </ul>
                 </div>
 
-                <div class="scope-box out-scope">
+                <div class="boundary-box out-scope">
                     <h4>What Is Out of Scope</h4>
                     <ul>
-                        <li>Copywriting or proofreading</li>
-                        <li>Graphic or video creation</li>
+                        <li>Copywriting or graphics creation</li>
                         <li>DNS or domain migrations</li>
-                        <li>Live sales or status calls</li>
+                        <li>Micromanagement or emergency pings</li>
+                        <li>Live sales calls</li>
                     </ul>
                 </div>
-
             </div>
-        </section>
-
-        <!-- Intake CTA Section -->
-        <section class="intake-section">
-            <h2>Ready to Get Started?</h2>
-            <p>If you have your brief, copy, and assets ready to go, send them over directly for a scope review.</p>
-            <a href="mailto:ip.gigspace@gmail.com?subject=Project%20Brief%20Submission" class="btn-primary">Submit Project Brief via Email</a>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>© JP.GIGSPACE — Async Implementation & Operations Specialist</p>
+            <p>© JP.GIGSPACE — Operations & Systems Implementation Specialist</p>
         </footer>
 
     </div>
